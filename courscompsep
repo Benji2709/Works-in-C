@@ -1,0 +1,35 @@
+cours sur la compilation séparée
+on écris ça dans un fichier .h
+#ifndef FUNC_H // vérifier si la fonction existe
+#define FUNC_H //
+
+déclarer les fonctions
+
+#endif
+
+dans le fichier .c
+#include "fichier.h"
+
+dans la compil
+gcc -c fichier.c -o fichier.o // générer la lib
+gedit main.c
+
+// déclarer la lib
+ar rcs libFichierS.a funcS.o // bibliothèque statique
+
+gcc mainc -L. -lFichierS -o mainS
+./mainS
+
+bibliothèque dynamique
+gcc -c fichier.c -o fichier.o
+gcc -shared func.o -o libfunc.so // bib dynamique
+
+gcc main.c -L. -lfuncD -o mainD //
+
+echo $LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=.
+./mainD
+
+
+// JS
+
